@@ -1,6 +1,6 @@
 This project is a full-stack application that leverages FastAPI for the backend and React with Vite for the frontend.
 
-## Things that should be improved, but due to a lack of time could'nt be done
+## Things that should be improved, but due to a lack of time couldn't be done
 - Separate react components in a more intuitive way
 - Don't directly use fetch. Instead abstract away all the external api calls using Axios
 - In the backend, create a separate controller, instead of creating the endpoints in the main.py file
