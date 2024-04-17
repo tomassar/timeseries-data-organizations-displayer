@@ -1,4 +1,3 @@
-// src/components/Map.tsx
 import L, { LatLngExpression } from "leaflet";
 import React from 'react';
 import { MapContainer, TileLayer, Polygon } from 'react-leaflet';
@@ -29,7 +28,7 @@ const Map: React.FC<MapProps> = ({ polygon }) => {
    
     const geoJson: GeoJsonPolygon = {
        type: "Polygon",
-       coordinates: [[...coordinates, coordinates[0]]] // Close the polygon by repeating the first coordinate
+       coordinates: [[...coordinates, coordinates[0]]]
     };
 
     console.log(geoJson)
@@ -38,14 +37,14 @@ const Map: React.FC<MapProps> = ({ polygon }) => {
    }
 
  const geoJson = createGeoJsonPolygon(polygon);
- //first coordinate
  const position: LatLngExpression = [geoJson.coordinates[0][0][1], geoJson.coordinates[0][0][0]];
  const positions: LatLngExpression[] = geoJson.coordinates[0].map(coord => [coord[1], coord[0]]);
   
  return (
     <MapContainer center={position} zoom={13} style={{ height: "70vh", width: "70%", marginBottom: "2rem" }}>
       <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url="https://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}"
+        maxZoom={20}
       />
       <Polygon positions={positions} />
     </MapContainer>
