@@ -15,5 +15,6 @@ server/*.pyo
 server/*.pyd
 server/*.log
 server/*.tmp
+server/app/venv/
 
 .vscode/
