@@ -1,4 +1,5 @@
 import React from 'react';
+import 'leaflet/dist/leaflet.css';
 import OrganizationSelector from './components/OrganizationSelector';
 
 const App: React.FC = () => {
