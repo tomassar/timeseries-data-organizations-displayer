@@ -8,7 +8,7 @@ client/.DS_Store
 server/__pycache__/
 server/*/__pycache__/
 server/*/*/__pycache__/
-server/.env
+server/*/.env
 server/venv/
 server/*.pyc
 server/*.pyo
