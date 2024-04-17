@@ -16,10 +16,12 @@ First, clone the repository to your local machine:
 
 ### Step 2: Install Dependencies
 
-Next, install the required Python packages using pip:
+Next, install the required Python packages using pip and venv:
 
 ```
-bash pip install -r requirements.txt
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 ### Step 3: Set Up the Database
@@ -58,3 +60,13 @@ Tthis command starts the development server and opens your application in a web 
 ## Accessing the Application
 
 Once both the backend and frontend are running, you can access the application by opening a web browser and navigating to `http://localhost:5173` (or the port specified by Vite).
+
+# Images
+![image](https://github.com/tomassar/timeseries-data-organizations-displayer/assets/71415654/66d2cbe0-9c98-46a4-a648-e37909684b7e)
+![image](https://github.com/tomassar/timeseries-data-organizations-displayer/assets/71415654/5fe43f14-b2d5-4346-8a3e-cf9a7307387b)
+
+### Database tables
+![image](https://github.com/tomassar/timeseries-data-organizations-displayer/assets/71415654/b9f425d0-d2d6-424c-90f3-30b7e3d74bf5)
+![image](https://github.com/tomassar/timeseries-data-organizations-displayer/assets/71415654/bd77ac9b-6e42-48eb-95f8-9b03925ab765)
+
+
