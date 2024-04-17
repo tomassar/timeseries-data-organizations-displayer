@@ -20,10 +20,10 @@ app.add_middleware(
 )
 
 
-@app.get("/organizations")
+@app.get("/api/v1/organizations")
 async def get_organizations():
     return read_organizations()
 
-@app.get("/timeseries/{org_id}")
+@app.get("/api/v1/timeseries/{org_id}")
 async def get_timeseries(org_id: str):
     return read_timeseries(org_id)

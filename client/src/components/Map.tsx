@@ -51,7 +51,7 @@ const Map: React.FC<MapProps> = ({ polygon }) => {
  return (
     <>
       <TileLayer
-        url="https://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}"
+        url={import.meta.env.VITE_SATELLITE_BASE_URL as string}
         maxZoom={20}
         />
       <Polygon positions={positions} />

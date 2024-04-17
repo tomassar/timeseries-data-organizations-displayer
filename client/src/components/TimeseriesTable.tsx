@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { TimeSeriesData } from '../types/TimeSeriesData';
 
 interface Props {
@@ -7,8 +7,8 @@ interface Props {
 
 const TimeseriesTable: React.FC<Props> = ({ timeseriesData }) => {
     const [sortConfig, setSortConfig] = useState<{ key: keyof TimeSeriesData; direction: 'ascending' | 'descending' }>({
-        key: 'timestamp', // Default sort column
-        direction: 'ascending', // Default sort direction
+        key: 'timestamp',
+        direction: 'ascending',
     });
 
     

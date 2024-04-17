@@ -8,13 +8,15 @@ import { MapContainer } from 'react-leaflet';
 
 
 const OrganizationSelector: React.FC = () => {
+  const baseUrl = import.meta.env.VITE_BASE_URL as string;
+
  const [organizations, setOrganizations] = useState<Organization[]>([]);
  const [selectedOrg, setSelectedOrg] = useState<string>('');
  const [timeseriesData, setTimeseriesData] = useState<TimeSeriesData[]>([]);
  const [selectedOrgPolygon, setSelectedOrgPolygon] = useState<string>('');
  
  useEffect(() => {
-    fetch('http://localhost:8000/organizations')
+    fetch(`${baseUrl}/api/v1/organizations`)
       .then(response => response.json())
       .then(data => setOrganizations(data));
  }, []);
@@ -22,7 +24,7 @@ const OrganizationSelector: React.FC = () => {
  const handleOrganizationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const orgId = event.target.value;
     setSelectedOrg(orgId);
-    fetch(`http://localhost:8000/timeseries/${orgId}`)
+    fetch(`${baseUrl}/api/v1/timeseries/${orgId}`)
       .then(response => response.json())
       .then(data => setTimeseriesData(data));
 
