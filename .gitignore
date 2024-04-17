@@ -1,0 +1,17 @@
+# React client specific ignores
+client/node_modules/
+client/build/
+client/.env
+client/.DS_Store
+
+# FastAPI server specific ignores
+server/__pycache__/
+server/.env
+server/venv/
+server/*.pyc
+server/*.pyo
+server/*.pyd
+server/*.log
+server/*.tmp
+
+.vscode/
