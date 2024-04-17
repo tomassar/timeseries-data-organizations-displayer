@@ -1,6 +1,6 @@
 import L, { LatLngExpression } from "leaflet";
-import React from 'react';
-import { MapContainer, TileLayer, Polygon } from 'react-leaflet';
+import React, { useEffect } from 'react';
+import { MapContainer, TileLayer, Polygon, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 interface MapProps {
@@ -13,6 +13,14 @@ interface GeoJsonPolygon {
 }
 
 const Map: React.FC<MapProps> = ({ polygon }) => {
+  const map = useMap();
+
+  useEffect(() => {
+     const geoJson = createGeoJsonPolygon(polygon);
+     const position: LatLngExpression = [geoJson.coordinates[0][0][1], geoJson.coordinates[0][0][0]];
+     map.setView(position, 13);
+  }, [polygon, map]);
+
   function createGeoJsonPolygon(polygonString: string): GeoJsonPolygon {
     const cleanedString = polygonString.replace('|', ';');
 
@@ -41,13 +49,13 @@ const Map: React.FC<MapProps> = ({ polygon }) => {
  const positions: LatLngExpression[] = geoJson.coordinates[0].map(coord => [coord[1], coord[0]]);
   
  return (
-    <MapContainer center={position} zoom={13} style={{ height: "70vh", width: "70%", marginBottom: "2rem" }}>
+    <>
       <TileLayer
         url="https://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}"
         maxZoom={20}
-      />
+        />
       <Polygon positions={positions} />
-    </MapContainer>
+    </>
  );
 };
 

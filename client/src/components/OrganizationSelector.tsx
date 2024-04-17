@@ -4,6 +4,8 @@ import { TimeSeriesData } from '../types/TimeSeriesData';
 import TimeseriesTable from './TimeseriesTable';
 import Map from './Map';
 import TimeSeriesChart from './TimeseriesChart';
+import { MapContainer } from 'react-leaflet';
+
 
 const OrganizationSelector: React.FC = () => {
  const [organizations, setOrganizations] = useState<Organization[]>([]);
@@ -45,7 +47,9 @@ const OrganizationSelector: React.FC = () => {
       </select>
       {(selectedOrg) && (
         <div className="flex flex-col justify-center items-center gap-10">
-          <Map polygon={selectedOrgPolygon} />
+          <MapContainer center={[0,0]} zoom={13} style={{ height: "70vh", width: "70%", marginBottom: "2rem" }}>
+            <Map polygon={selectedOrgPolygon} />
+          </MapContainer>
           <TimeSeriesChart timeseriesData={timeseriesData} />
           <TimeseriesTable timeseriesData={timeseriesData}/>
         </div>
