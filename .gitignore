@@ -6,6 +6,8 @@ client/.DS_Store
 
 # FastAPI server specific ignores
 server/__pycache__/
+server/*/__pycache__/
+server/*/*/__pycache__/
 server/.env
 server/venv/
 server/*.pyc
