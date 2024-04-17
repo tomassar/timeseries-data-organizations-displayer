@@ -3,6 +3,7 @@ import { Organization } from '../types/Organization';
 import { TimeSeriesData } from '../types/TimeSeriesData';
 import TimeseriesTable from './TimeseriesTable';
 import Map from './Map';
+import TimeSeriesChart from './TimeseriesChart';
 
 const OrganizationSelector: React.FC = () => {
  const [organizations, setOrganizations] = useState<Organization[]>([]);
@@ -43,8 +44,9 @@ const OrganizationSelector: React.FC = () => {
         ))}
       </select>
       {(selectedOrg) && (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center gap-10">
           <Map polygon={selectedOrgPolygon} />
+          <TimeSeriesChart timeseriesData={timeseriesData} />
           <TimeseriesTable timeseriesData={timeseriesData}/>
         </div>
       )}
