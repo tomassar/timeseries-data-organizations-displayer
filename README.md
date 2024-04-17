@@ -1,5 +1,13 @@
 This project is a full-stack application that leverages FastAPI for the backend and React with Vite for the frontend.
 
+## Things that should be improved, but due to a lack of time could'nt be done
+- Separate react components in a more intuitive way
+- Don't directly use fetch. Instead abstract away all the external api calls using Axios
+- In the backend, create a separate controller, instead of creating the endpoints in the main.py file
+- The Chart is not that good looking, more improvements can definitely be done
+- The UI in general is not the most UX friendly. Although is not that ugly, it could be much better.
+- The table is not mobile responsive.
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
